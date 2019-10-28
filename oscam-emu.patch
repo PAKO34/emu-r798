@@ -7,7 +7,7 @@ Index: .travis.yml
 +script: ./config.sh -E all && make
 Index: CMakeLists.txt
 ===================================================================
---- CMakeLists.txt	(revision 11546)
+--- CMakeLists.txt	(revision 11561)
 +++ CMakeLists.txt	(working copy)
 @@ -101,6 +101,7 @@
  		${CMAKE_CURRENT_SOURCE_DIR}/csctapi
@@ -115,7 +115,7 @@ Index: CMakeLists.txt
  message (STATUS "")
 Index: Makefile
 ===================================================================
---- Makefile	(revision 11546)
+--- Makefile	(revision 11561)
 +++ Makefile	(working copy)
 @@ -65,6 +65,13 @@
  
@@ -173,7 +173,7 @@ Index: Makefile
  | OSCam ver: $(VER) rev: $(SVN_REV) target: $(TARGET)\n\
 Index: config.h
 ===================================================================
---- config.h	(revision 11546)
+--- config.h	(revision 11561)
 +++ config.h	(working copy)
 @@ -1,6 +1,8 @@
  #ifndef CONFIG_H_
@@ -186,7 +186,7 @@ Index: config.h
  #define WEBIF_JQUERY 1
 Index: config.sh
 ===================================================================
---- config.sh	(revision 11546)
+--- config.sh	(revision 11561)
 +++ config.sh	(working copy)
 @@ -1,6 +1,6 @@
  #!/bin/sh
@@ -272,7 +272,7 @@ old mode 100644
 new mode 100755
 Index: globals.h
 ===================================================================
---- globals.h	(revision 11546)
+--- globals.h	(revision 11561)
 +++ globals.h	(working copy)
 @@ -388,7 +388,7 @@
  #define CS_ECM_RINGBUFFER_MAX	0x10	// max size for ECM last responsetimes ringbuffer. Keep this set to power of 2 values!
@@ -283,7 +283,7 @@ Index: globals.h
  
  #if defined(READER_DRE) || defined(READER_DRECAS) || defined(READER_VIACCESS) || defined(WITH_EMU)
  #define MAX_ECM_SIZE			1024
-@@ -1782,6 +1782,7 @@
+@@ -1783,6 +1783,7 @@
  #ifdef WITH_EMU
  	FTAB			emu_auproviders;				// AU providers for Emu reader
  	int8_t			emu_datecodedenabled;			// date-coded keys for BISS
@@ -293,7 +293,7 @@ Index: globals.h
  	LLIST			*emmstat;						// emm stats
 Index: module-dvbapi.c
 ===================================================================
---- module-dvbapi.c	(revision 11546)
+--- module-dvbapi.c	(revision 11561)
 +++ module-dvbapi.c	(working copy)
 @@ -2633,6 +2633,8 @@
  	er->vpid   = demux[demux_id].ECMpids[pid].VPID;
@@ -11380,7 +11380,7 @@ Index: module-emulator.c
 +#endif // WITH_EMU
 Index: oscam.c
 ===================================================================
---- oscam.c	(revision 11546)
+--- oscam.c	(revision 11561)
 +++ oscam.c	(working copy)
 @@ -41,6 +41,11 @@
  #include "reader-common.h"
@@ -11425,7 +11425,7 @@ Index: oscam.c
  	coolapi_close_all();
 Index: webif/config/dvbapi.html
 ===================================================================
---- webif/config/dvbapi.html	(revision 11546)
+--- webif/config/dvbapi.html	(revision 11561)
 +++ webif/config/dvbapi.html	(working copy)
 @@ -55,7 +55,7 @@
  			</TD>
